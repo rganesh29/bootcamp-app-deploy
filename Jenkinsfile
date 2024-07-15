@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     // remove apache2 index.html file and empty folder
-                    sh 'sudo rm -r *'
+                    sh 'sudo rm -r /var/www/html/*'
                 }
             }
         }
