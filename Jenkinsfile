@@ -4,31 +4,40 @@ pipeline {
     }
 
     stages {
-      // Install Apache2
-        // stage('Install Apache2') {
-        //     steps {
-        //         script {         
-        //             sh 'sudo apt-get update'
-        //             sh 'sudo apt-get install -y apache2'
-        //         }
-        //     }
-        // }
-
-        // Start and enable Apache2 service
-        stage('Start and Enable Apache2') {
+        stage('Install Dependencies') {
             steps {
                 script {
-                    sh 'sudo systemctl start apache2'
-                    sh 'sudo systemctl enable apache2'
+                    // Update package list and install required packages
+                    sh 'sudo apt-get update'
+                    sh 'sudo apt-get install -y apache2 unzip'
                 }
             }
         }
 
-        // Move the folder to /var/www/html
+        stage('Unzip Avocado.zip') {
+            steps {
+                script {
+                    // Unzip Avocado.zip
+                    sh 'sudo unzip Avocado.zip -d ./Avocado'
+                }
+            }
+        }
+
         stage('Move Folder to /var/www/html') {
             steps {
                 script {
-                    sh 'sudo mv ./ /var/www/html/'
+                    // Move the folder to /var/www/html
+                    sh 'sudo mv ./Avocado /var/www/html/'
+                }
+            }
+        }
+
+        stage('Start and Enable Apache2') {
+            steps {
+                script {
+                    // Start and enable Apache2 service
+                    sh 'sudo systemctl start apache2'
+                    sh 'sudo systemctl enable apache2'
                 }
             }
         }
