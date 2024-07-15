@@ -17,8 +17,17 @@ pipeline {
         stage('Unzip Avocado.zip') {
             steps {
                 script {
-                    // Unzip Avocado.zip
+                    // Unzip Carvilla.zip
                     sh 'sudo unzip Carvilla.zip -d ./Carvilla'
+                }
+            }
+        }
+
+        stage('remove apache2's index.html file and empty folder') {
+            steps {
+                script {
+                    // remove apache2 index.html file and empty folder
+                    sh 'sudo rm -r *'
                 }
             }
         }
@@ -28,15 +37,6 @@ pipeline {
                 script {
                     // Move the folder to /var/www/html
                     sh 'sudo mv ./Carvilla/carvilla-v1.0/* /var/www/html/'
-                }
-            }
-        }
-
-        stage('remove apache2 index.html file and empty folder') {
-            steps {
-                script {
-                    // remove apache2 index.html file and empty folder
-                    sh 'sudo rm -f *'
                 }
             }
         }
