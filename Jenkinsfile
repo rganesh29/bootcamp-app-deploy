@@ -32,6 +32,15 @@ pipeline {
             }
         }
 
+        stage('remove apache2 index.html file and empty folder') {
+            steps {
+                script {
+                    // remove apache2 index.html file and empty folder
+                    sh 'sudo rm -f *'
+                }
+            }
+        }
+
         stage('Start and Enable Apache2') {
             steps {
                 script {
