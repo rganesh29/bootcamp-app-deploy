@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // Unzip Avocado.zip
-                    sh 'sudo unzip Dozecafe.zip -d ./Avocado'
+                    sh 'sudo unzip Dozecafe.zip -d ./Dozecafe'
                 }
             }
         }
