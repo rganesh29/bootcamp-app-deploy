@@ -23,7 +23,7 @@ pipeline {
             }
         }
 
-        stage('remove apache2's index.html file and empty folder') {
+        stage('remove apache2 index.html file and empty folder') {
             steps {
                 script {
                     // remove apache2 index.html file and empty folder
