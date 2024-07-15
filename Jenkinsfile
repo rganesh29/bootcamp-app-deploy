@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     // Move the folder to /var/www/html
-                    sh 'sudo mv ./Carvilla/* /var/www/html/'
+                    sh 'sudo mv ./Carvilla/carvilla-v1.0/* /var/www/html/'
                 }
             }
         }
