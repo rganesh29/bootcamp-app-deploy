@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // Unzip Avocado.zip
-                    sh 'sudo unzip Dozecafe.zip -d ./Dozecafe'
+                    sh 'sudo unzip Carvilla.zip -d ./Carvilla'
                 }
             }
         }
@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     // Move the folder to /var/www/html
-                    sh 'sudo mv ./Dozecafe /var/www/html/'
+                    sh 'sudo mv ./Carvilla /var/www/html/'
                 }
             }
         }
