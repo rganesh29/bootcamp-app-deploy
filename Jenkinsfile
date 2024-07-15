@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // Unzip Avocado.zip
-                    sh 'sudo unzip Avocado.zip -d ./Avocado'
+                    sh 'sudo unzip Dozecafe.zip -d ./Avocado'
                 }
             }
         }
@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     // Move the folder to /var/www/html
-                    sh 'sudo mv ./Avocado /var/www/html/'
+                    sh 'sudo mv ./Dozecafe /var/www/html/'
                 }
             }
         }
